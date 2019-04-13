@@ -1,4 +1,4 @@
-Ecreate table user(email_id varchar(30) primary key, pass varchar(15) not null, _name varchar(30) 
+create table user(email_id varchar(30) primary key, pass varchar(15) not null, _name varchar(30) 
 not null, gender varchar(1) not null, age int not null, mobile varchar(14) not null, city varchar(20) not null,
 _state varchar(25) not null,CHECK(gender='M' or gender='F'));
 
