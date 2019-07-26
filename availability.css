@@ -9,10 +9,10 @@ body {
 
 .login-box {
   width: 320px;
-  height: 320px;
+  height: 430px;
   background: #000;
   color: #fff;
-  top: 50%;
+  top: 53%;
   left: 24.8%;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -22,7 +22,8 @@ body {
 }
 
 .login-box .avatar {
- 
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   position: absolute;
   top: -50px;
@@ -35,7 +36,22 @@ body {
   text-align: center;
   font-size: 22px;
 }
-
+.class
+{
+	width: 100%;
+  margin-bottom: 20px;
+   border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+.oth
+{
+	color: black;
+}
 .login-box label {
   margin: 0;
   padding: 0;

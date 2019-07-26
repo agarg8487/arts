@@ -1,0 +1,11 @@
+body{
+  
+  margin: 0;
+  padding: 0;
+  background-image: url("pink_dust.png");
+  background-repeat: repeat;
+  font-family: sans-serif;
+  height: 100vh;
+  font-family: 'Oxygen', sans-serif;
+  color: #fff !important;
+} 

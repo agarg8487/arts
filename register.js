@@ -113,12 +113,14 @@ function check_password(password) {
         message_password="Please enter your password !";
         document.getElementById('message_password').innerHTML=message_password;
         return 0;
-    } else if (password.value.length < 8) {
+    } 
+	else if (password.value.length < 0) {
         password.style.border='1px solid red';
         message_password="Passwords must be at least 8 characters long";
         document.getElementById('message_password').innerHTML=message_password;
         return 0;
-    } else {
+    } 
+	else {
         password.style.border='1px solid green';
         message_password="";
         document.getElementById('message_password').innerHTML=message_password;

@@ -24,9 +24,11 @@ if (isset($_POST['register']))
 		$check=mysqli_num_rows($result);		
 		if($check<1)
 		{
+			$sql="Delete from user where email_id='$email'";
+			$result1=mysqli_query($connect, $sql);
 			$sql="INSERT INTO user(name,email_id,gender, age, mobile, zipcode, pass) values('$name','$email', '$gender', $age, '$phone', $zipcode, '$pass')";
 			$result=mysqli_query($connect, $sql);
-			header("Location: ../login.php?email_registered");
+			header("Location: ../home.php?password_updated");
 				exit();
 		}
 		else

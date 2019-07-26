@@ -6,15 +6,17 @@ select * from user where user="---------------";
 ---------Searching trains---------
 
 --Searching ---have to do backend work on days available part eg- we have to consider daynum amd _day func(_day + day(daynum - 1))
-
-select s1.t_id , s1.day_num as day_src,s2.day_num as day_dest, da._day, s1.arrival as arrival_src , s1.departure as departure_src, s2.arrival as arrival_dest, s2.departure as departure_dest, s1.fare_cum_sleep as fare_src, s2.fare_cum_sleep as fare_dest from schedule s1, schedule s2, days_available da 
+select s1.t_id , s1.day_num, da._day, s1.arrival , s1.departure, s2.arrival, s2.departure, s1.fare_cum, s2.fare_cum from schedule s1, schedule s2, days_available da 
 where s1.t_id=s2.t_id 
 and da.t_id=s1.t_id 
 and s1.station_index < s2.station_index 
 and s1.station_id in (select station_id from station where station_name="src_name") 
-and s2.station_id in (select station_id from station where station_name="dest_name");
+and s2.station_id in (select station_id from station where station_name="src_name");
 
-
+select sc.station_index,sc.t_id, t.t_name, s.station_name,sc.arrival,sc.departure from schedule sc, train t, station s where
+sc.t_id=t.t_id
+and sc.station_id=s.station_id
+and sc.t_id="______";  
 -----------Booking-----------
 --Seat select from unbooked tickets
 select seat_num from unbooked 

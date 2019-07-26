@@ -1,0 +1,198 @@
+create table user(name varchar(30) not null, email_id varchar(30) primary key,  gender varchar(10) not null, age int not null, mobile varchar(14) not null, zipcode int not null,
+pass varchar(15) not null,CHECK(gender='M' or gender='F' or gender='Others'));
+
+insert into user values("Abhishek Dubey","dubey@yahoo.co.in","M","37","9567483902",123456,"abcd123");
+insert into user values("Jeevan Arra","jeevan@gmail.com","M","26","9567483989",123456,"vcgd111");
+insert into user values("Chaitali Biswas","aaleya15@yahoo.com","F","23","9574839758",123456,"fhgkkk181");
+insert into user values("Himanshu Mishra","himanshu104@yahoo.com","M","40","9797483902",123456,"vgfdf1616");
+insert into user values("Deena Josphine","deena.josphine1985@gmail.com","F","33","9475839759",123456,"9739gdf");
+insert into user values("Deepa Shree","deep29shree@gmail.com","F","24","9874026479",123456,"7259pkl");
+insert into user values("Ramesh Kumar","ramesh23@gmail.com","M","20","9823154769",123456,"wxyz789");
+insert into user values("Hema Basu","hema.basu@gmail.com","F","30","9528465782",123456,"7259pkl");
+insert into user values("Shalini Malhotra","shalini@gmail.com","F","21","9235741368",123456,"xvat234");
+insert into user values("Pavan Jha","pavan.jha@gmail.com","M","42","8752369412",123456,"abc1234");
+insert into user values("Aejaz Khan","aejaz@gmail.com","M","33","7259631841",123456,"sghy123");
+insert into user values("Priya Reddy","preddy@gmail.com","F","29","8523697514",123456,"hbk5562");
+insert into user values("Joseph Thomas","joseph@gmail.com","M","35","7598321468",123456,"utvh765");
+insert into user values("Chaitra V","vchaitra@gmail.com","F","47","9236547812",123456,"jhbk67");
+insert into user values("Kusum Patil","kpatil@gmail.com","F","24","9458762589",123456,"hv567df");
+insert into user values("Lavanya Mehra","lavanya@gmail.com","F","28","8745123698",123456,"vtvt65f");
+insert into user values("Pranjal Varma","pranjal@gmail.com","M","29","7846952135",123456,"67htfg");
+insert into user values("Neha Bose","neha@gmail.com","F","39","8951236748",123456,"neh2333");
+insert into user values("Seema Elizabeth","seema@gmail.com","F","24","8561235749",123456,"jvt566");
+insert into user values("Prakash Kumar","prakash@gmail.com","M","52","7458912368",123456,"iy673h");
+
+create table station(station_id int primary key , station_name varchar(25) unique);
+
+insert into station values(1,"Dehradun");
+insert into station values(2,"Bandra Terminus");
+insert into station values(3,"Haridwar");
+insert into station values(4,"Meerut City Junction");
+insert into station values(5,"Kota Junction");
+
+insert into station values(6,"Trivandrum Central");
+insert into station values(7,"Hazrat Nizammudin");
+insert into station values(8,"Udupi");
+insert into station values(9,"Vadodara Junction");
+
+insert into station values(10,"Ahmedabad Junction");
+insert into station values(11,"Anand Junction");
+insert into station values(12,"Borivali");
+insert into station values(13,"Mumbai Central");
+
+insert into station values(14,"Lucknow New");
+insert into station values(15,"Varanasi City");
+insert into station values(16,"Lucknow City");
+insert into station values(17,"Gonda Junction");
+insert into station values(18,"Gorakhpur Junction");
+
+insert into station values(19,"Jabalpur");
+insert into station values(20,"Somnath");
+insert into station values(21,"Ujjain Junction");
+insert into station values(22,"Bhopal Junction");
+
+insert into station values(23,"Delhi S Rohilla");
+insert into station values(24,"Delhi Cantt.");
+insert into station values(25,"Rajkot Junction");
+insert into station values(26,"Bhavnagar Trmus");
+insert into station values(27,"Jaipur");
+
+insert into station values(28,"Mumbai CST");
+insert into station values(29,"Sainagar Shirdi");
+insert into station values(30,"Ambarnath");
+insert into station values(31,"Pune Junction");
+insert into station values(32,"Kalyan Junction");
+
+insert into station values(33,"Kalka");
+insert into station values(34,"Chandigarh");
+insert into station values(35,"Panipat Junction");
+insert into station values(36,"Sonipat Junction");
+
+insert into station values(37,"Bhubaneswar");
+insert into station values(38,"Kharagpur Junction");
+insert into station values(39,"Howrah Junction");
+insert into station values(40,"Barpeta Road");
+insert into station values(41,"Guwahati");
+
+create table train(t_id int primary key, t_name varchar(50) not null, t_type varchar(50) not null, 
+src_id int not null, dest_id int not null, ac_seats int not null,sleeper_seats int not null);
+
+
+insert into train values(19020,"Dehradun Express","Express",1,2,40,100);
+insert into train values(19019,"Dehradun Express","Express",2,1,40,100);
+
+insert into train values(12431,"Rajdhani Express","Express",6,7,100,100);
+insert into train values(12010,"Shatabdi Express","Express",10,13,50,100);
+insert into train values(15008,"LJN BCY Express","Express",14,15,25,100);
+insert into train values(11464,"JBP Somnath Express","Express",19,20,25,100);
+
+insert into train values(19580,"DEE BVC Express","Express",23,26,25,100);
+insert into train values(51033,"Shirdi Fast Passenger","Passenger",28,29,50,100);
+insert into train values(14096,"Himalayan Queen","Special",33,23,50,100);
+insert into train values(12509,"Guwahati Express","Express",37,41,40,100);
+
+
+
+create table schedule(t_id int not null, station_index int not null, station_id int not null,  arrival time ,departure time  , day_num int not null, fare_cum_ac int not null, fare_cum_sleep int not null);
+
+
+insert into schedule values(19020,0,1,'10:00:00','10:30:00', 1,0,0);
+ insert into schedule values(19020,1,3,'11:55:00','12:25:00',1,200,50);
+ insert into schedule values(19020,2,4,'18:25:00','19:10:00',1,500,200);
+ insert into schedule values(19020,3,5,'07:35:00','07:45:00',2,1600,800);
+ insert into schedule values(19020,4,2,'14:20:00','15:00:00',2,2000,1000);
+ 
+ insert into schedule values(12431,0,6,'07:00:00','07:15:00',1, 0,0);
+ insert into schedule values(12431,1,8,'07:02:00','07:04:00',2,  200,50);
+ insert into schedule values(12431,2,9,'03:35:00','03:53:00',3, 500,200);
+ insert into schedule values(12431,3,5,'10:45:00','10:55:00',3,1600,800);
+ insert into schedule values(12431,4,7,'16:55:00','18:00:00',3, 2000,1000);
+ 
+ insert into schedule values(12010,0,10,'02:00:00','02:40:00',1, 0,0);
+ insert into schedule values(12010,1,11,'07:02:00','07:04:00',1,200,50);
+ insert into schedule values(12010,2,9,'16:11:00','16:16:00',1, 500,200);
+ insert into schedule values(12010,3,12,'20:35:00','20:37:00',1, 1600,800);
+ insert into schedule values(12010,4,13,'21:20:00','22:00:00',1, 2000,1000);
+ 
+ insert into schedule values(15008,0,14,'22:00:00','23:05:00',1,0,0);
+ insert into schedule values(15008,1,16,'23:19:00','23:21:00',1,200,50);
+ insert into schedule values(15008,2,17,'02:15:00','02:30:00',2,500,200);
+ insert into schedule values(15008,3,18,'06:15:00','06:35:00',2,1600,800);
+ insert into schedule values(15008,4,15,'13:00:00','14:00:00',2,2000,1000);
+ 
+ insert into schedule values(11464,0,19,'11:00:00','12:00:00',1,0,0);
+ insert into schedule values(11464,1,22,'18:35:00','18:45:00',1,200,50);
+ insert into schedule values(11464,2,21,'22:45:00','22:55:00',1,500,200);
+ insert into schedule values(11464,3,9,'05:20:00','05:50:00',2,1600,800);
+ insert into schedule values(11464,4,20,'18:00:00','19:00:00',2,2000,1000);
+ 
+ insert into schedule values(19580,0,23,'12:10:00','13:10:00',1,0,0);
+ insert into schedule values(19580,1,24,'13:28:00','13:30:00',1,200,50);
+ insert into schedule values(19580,2,27,'18:15:00','18:30:00',1, 500,200);
+ insert into schedule values(19580,3,25,'10:15:00','00:00:00',2,1600,800);
+ insert into schedule values(19580,4,26,'13:35:00','14:35:00',2,2000,1000);
+ 
+ insert into schedule values(51033,0,28,'21:55:00','22:55:00',1,0,0);
+ insert into schedule values(51033,1,32,'23:52:00','23:55:00',1, 200,50);
+ insert into schedule values(51033,2,30,'00:14:00','00:16:00',2, 500,200);
+ insert into schedule values(51033,3,31,'04:05:00','04:20:00',2,1600,800);
+ insert into schedule values(51033,4,29,'10:55:00','11:55:00',2,2000,1000);
+ 
+ insert into schedule values(14096,0,33,'15:50:00','16:50:00',1,0,0);
+ insert into schedule values(14096,1,34,'17:22:00','17:30:00',1,200,50);
+ insert into schedule values(14096,2,35,'20:21:00','20:23:00',1,500,200);
+ insert into schedule values(14096,3,36,'21:18:00','21:20:00',1,1600,800);
+ insert into schedule values(14096,4,23,'22:40:00','23:40:00',1,2000,1000);
+ 
+ insert into schedule values(12509,0,37,'02:30:00','02:35:00',1, 0,0);
+ insert into schedule values(12509,1,38,'08:15:00','08:30:00',1, 200,50);
+ insert into schedule values(12509,2,39,'10:55:00','11:15:00',1, 500,200);
+ insert into schedule values(12509,3,40,'03:00:00','03:02:00',2,1600,800);
+ insert into schedule values(12509,4,41,'06:00:00','07:00:00',2, 2000,1000);
+ 
+ insert into schedule values(19019,0,2,'23:05:00','00:05:00',1,0,0);
+ insert into schedule values(19019,1,5,'06:45:00','06:55:00',1, 200,50);
+ insert into schedule values(19019,2,4,'19:05:00','19:35:00',1,500,200);
+ insert into schedule values(19019,3,3,'08:43:00','08:45:00',2, 1600,800);
+ insert into schedule values(19019,4,1,'17:35:00','18:35:00',2, 2000,1000);
+
+ update schedule set arrival=NULL where station_index=0;
+ update schedule set departure=NULL where station_index=4;
+
+--2,3,5,7,11,13,17--- Mon, tues,....., Sun
+
+ create table days_available(t_id int, _day int not null);
+ 
+ insert into days_available values(19020,510510);
+
+ insert into days_available values(19019,510510);
+
+insert into days_available values(12431,231);
+
+insert into days_available values(12010,30030);
+
+insert into days_available values(15008,510510);
+
+insert into days_available values(11464,19635);
+
+insert into days_available values(19580,11);
+
+insert into days_available values(12509,2431);
+
+
+
+
+select s1.t_id , s1.day_num as day_src,s2.day_num as day_dest, da._day, s1.arrival as arrival_src , s1.departure as departure_src, s2.arrival as arrival_dest, s2.departure as departure_dest, s1.fare_cum_sleep as fare_src, s2.fare_cum_sleep as fare_dest from schedule s1, schedule s2, days_available da 
+where s1.t_id=s2.t_id 
+and da.t_id=s1.t_id 
+and s1.station_index < s2.station_index 
+and s1.station_id in (select station_id from station where station_name="Dehradun") 
+and s2.station_id in (select station_id from station where station_name="Kota Junction");
+
+select s1.t_id , s1.day_num as day_src,s2.day_num as day_dest, da._day from schedule s1, schedule s2, days_available da 
+where s1.t_id=s2.t_id 
+and da.t_id=s1.t_id 
+and s1.station_index < s2.station_index 
+and s1.station_id in (select station_id from station where station_name="Meerut City Junction") 
+and s2.station_id in (select station_id from station where station_name="Kota Junction");
+
